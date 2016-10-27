@@ -1,0 +1,8 @@
+#! /bin/bash
+if [ $# -ne 1 ]
+then
+	echo "Usage ${0} docker service name "
+	exit -1
+fi
+
+docker service ls | grep $1 | cut -d" " -f1 | xargs docker service rm

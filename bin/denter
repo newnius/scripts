@@ -1,0 +1,10 @@
+#! /bin/bash
+if [ $# -ne 1 ]
+then
+	echo "Usage ${0} containerId|containerName "
+	exit -1
+fi
+
+ID=`docker ps | grep $1 | cut -f1 -d" "`
+
+exec docker exec -it ${ID} bash

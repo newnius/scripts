@@ -1,0 +1,8 @@
+#! /bin/bash
+if [ $# -ne 1 ]
+then
+	echo "Usage ${0} docker service name "
+	exit -1
+fi
+
+bash /mnt/Docker/scripts/start_$1.sh
