@@ -3,9 +3,8 @@
 docker service create \
 --replicas 1 \
 --name mongodb \
---network my-network \
+--network swarm-net \
 --endpoint-mode dnsrr \
 --user 1000:1000 \
---constraint "node.hostname == ubuntu-11" \
---mount type=bind,source=/home/test/mongodb,target=/data/db \
+--mount type=bind,src=/mnt/data/mongodb,dst=/data/db \
 mongo

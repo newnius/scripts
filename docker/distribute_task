@@ -1,0 +1,16 @@
+#! /bin/bash
+
+cnt=0;
+sum=$(($#+0));
+for i in $@ ; do
+  if [ ${cnt} -eq 0 ]; then
+    echo "[INFO] executing ${i}"
+  else
+    printf "[INFO] in ${i}: \n"
+    ssh "ubuntu-${i}" "cat > cluster_task.sh && bash cluster_task.sh && rm cluster_task.sh" < $1
+    printf "\n"
+  fi
+  let cnt+=1
+done
+    
+echo "[INFO]execute finished"

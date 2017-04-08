@@ -2,6 +2,6 @@
 
 docker service create \
 --name busybox \
---network my-network \
+--network swarm-net \
 busybox \
 sleep 300000

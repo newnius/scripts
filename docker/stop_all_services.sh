@@ -1,1 +1,1 @@
-docker service ls | cut -f1 -d" " | xargs docker service rm
+docker service ls | sed -n '2,$p' | cut -f1 -d" " | xargs docker service rm

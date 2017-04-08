@@ -20,15 +20,18 @@ do
 done
 join zookeeper_str , "${array[@]}"
 
+
 for i in $( seq 1 $ZOOKEEPER_NUM )
 do
 docker service create \
 -e MYID=${i} \
 -e SERVERS=${zookeeper_str} \
 --replicas 1 \
---network swarm-net \
---endpoint-mode dnsrr \
 --name=zookeeper_node${i} \
+--network swarm-net \
+--hostname zookeeper_node${i} \
+--endpoint-mode vip \
 mesoscloud/zookeeper:3.4.8-ubuntu-14.04
-echo "./renter zookeeper_${i}.1 /opt/zookeeper/bin/zkServer.sh status"
+echo "./renter zookeeper_node${i}.1 /opt/zookeeper/bin/zkServer.sh status"
 done
+
