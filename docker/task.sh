@@ -18,7 +18,7 @@ echo "123456" | sudo -S true
 ### upgrade docker
 #sudo -- sh -c 'curl -sSL https://get.docker.com | sh'
 #docker version
-sudo reboot
+#sudo reboot
 
 #sudo bash /mnt/Docker/scripts/install_crane_prerequirements.sh
 
@@ -28,3 +28,6 @@ sudo reboot
 #sudo mkdir /var/gluster/data/share
 
 #last
+
+
+docker rm -f gluster_server
