@@ -3,6 +3,7 @@
 #if you want to use sudo next, uncomment this line below
 echo "123456" | sudo -S true
 
+#docker swarm leave --force
 
 #date -R
 #sudo unlink /etc/localtime 
@@ -18,7 +19,7 @@ echo "123456" | sudo -S true
 ### upgrade docker
 #sudo -- sh -c 'curl -sSL https://get.docker.com | sh'
 #docker version
-#sudo reboot
+sudo reboot
 
 #sudo bash /mnt/Docker/scripts/install_crane_prerequirements.sh
 
@@ -30,4 +31,9 @@ echo "123456" | sudo -S true
 #last
 
 
-docker rm -f gluster_server
+#docker rm -f gluster_server
+
+
+
+
+#sudo mv /home/test/rc.local /etc/rc.local
