@@ -23,10 +23,11 @@ if [ $detach -gt 0 ]; then
 	copyName=$2
 fi
 
-nodeName=$(docker service ps ${copyName:0:-2} | grep $copyName | head -1 | awk '{print $4}')
-nodeAddr=$(grep ${nodeName} /etc/hosts | cut -f1)
-echo $nodeAddr
-containerId=$( docker -H ${nodeAddr}:2375 ps | grep ${copyName} | head -1 | awk '{print $1}' )
+node=$(docker service ps ${copyName:0:-2} | grep $copyName | head -1 | awk '{print $4}')
+echo ${node}
+
+containerId=$( docker -H ${node}:2375 ps | grep ${copyName} | head -1 | awk '{print $1}' )
+
 echo $containerId
 comm=/bin/bash
 if [ $detach -eq 0 ]; then
@@ -35,13 +36,13 @@ if [ $# -gt 1 ]; then
 	num=$(expr $# - 1 )
 	comm=${tmp[@]:1:$num}
 fi
-docker -H ${nodeAddr}:2375 exec -it ${containerId} ${comm:-/bin/bash}
+docker -H ${node}:2375 exec -it ${containerId} ${comm:-/bin/bash}
 else
 if [ $# -gt 2 ]; then
 	tmp=("$@")
 	num=$(expr $# - 1 )
 	comm=${tmp[@]:2:$num}
 fi
-docker -H ${nodeAddr}:2375 exec -d ${containerId} ${comm:-/bin/bash}
+docker -H ${node}:2375 exec -d ${containerId} ${comm:-/bin/bash}
 fi
 
