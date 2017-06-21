@@ -18,9 +18,9 @@ echo "\n"
 #sudo usermod -aG docker $USER
 
 ### upgrade docker
-#sudo -- sh -c 'curl -sSL https://get.docker.com | sh'
-#docker version
-#sudo reboot
+sudo -- sh -c 'curl -sSL https://get.docker.com | sh'
+docker version
+sudo reboot
 
 #sudo bash /mnt/Docker/scripts/install_crane_prerequirements.sh
 

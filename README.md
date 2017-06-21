@@ -28,4 +28,3 @@
   - [dstop](bin/dstop)  --> docker service rm $1 (support regex, multi)
 
 ## Others
-  - [mount-init.sh](mount-init.sh)
