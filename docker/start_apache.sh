@@ -5,6 +5,7 @@ docker service create \
 --name apache \
 --network swarm-net \
 --publish 80:80 \
+--detach=true \
 --mount type=bind,source=/mnt/data/apache/webroot,target=/var/www/html \
 --mount type=bind,source=/mnt/data/apache/weblogs,target=/var/log/apache2 \
-newnius/php:5.6
+newnius/php:7.1

@@ -6,5 +6,6 @@ docker service create \
 --network swarm-net \
 --endpoint-mode dnsrr \
 --user 1000:1000 \
+--detach=true \
 --mount type=bind,source=/mnt/data/redis,target=/data \
 redis redis-server --appendonly yes
