@@ -1,13 +1,11 @@
 # scripts
 
 ## Docker
-  - [install_docker.sh](docker/install_docker.sh)
   - [remove_all_images.sh](docker/remove_all_images.sh)
   - [start_mongodb.sh](docker/start_mongodb.sh)
   - [start_nginx.sh](docker/start_nginx.sh)
   - [start_socks.sh](docker/start_socks.sh)
   - [start_storm_ui.sh](docker/start_storm_ui.sh)
-  - [nginx.conf](docker/nginx.conf)
   - [start_apache_php7.sh](docker/start_apache_php7.sh)
   - [start_mysql.sh](docker/start_mysql.sh)
   - [start_redis.sh](docker/start_redis.sh)

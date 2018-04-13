@@ -1,5 +1,8 @@
 #! /bin/bash
+# Deprecated, use `curl -fsSL https://get.docker.com | sh ` instead
+
 # support ubuntu14.04.1
+
 sudo apt-get update && \
 
 sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual && \
