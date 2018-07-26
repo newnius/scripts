@@ -2,6 +2,7 @@
 
 docker service create \
 --name spark-master \
+--detach=true \
 --hostname spark-master \
 --network swarm-net \
 --replicas 1 \
@@ -14,6 +15,7 @@ newnius/spark
 
 docker service create \
 --name spark-slave1 \
+--detach=true \
 --hostname spark-slave1 \
 --network swarm-net \
 --replicas 1 \
@@ -26,6 +28,7 @@ newnius/spark
 
 docker service create \
 --name spark-slave2 \
+--detach=true \
 --hostname spark-slave2 \
 --network swarm-net \
 --replicas 1 \

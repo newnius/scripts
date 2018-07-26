@@ -3,6 +3,7 @@
 docker service create \
 --replicas 1 \
 --name mysql \
+--detach=true \
 --network swarm-net \
 --endpoint-mode dnsrr \
 --user 1000:1000 \

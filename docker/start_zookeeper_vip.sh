@@ -28,6 +28,7 @@ docker service create \
 -e SERVERS=${zookeeper_str} \
 --replicas 1 \
 --name=zookeeper_node${i} \
+--detach=true \
 --network swarm-net \
 --hostname zookeeper_node${i} \
 --endpoint-mode vip \

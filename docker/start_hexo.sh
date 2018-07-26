@@ -3,6 +3,7 @@
 docker service create \
         --name hexo \
         --replicas 1 \
+        --detach=true \
         --network swarm-net \
         --publish 4000:4000 \
         --mount type=bind,source=/path/in/host,target=/blog \

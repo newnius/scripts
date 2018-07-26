@@ -29,6 +29,7 @@ docker service create \
 --network swarm-net \
 --endpoint-mode dnsrr \
 --name=zookeeper_node${i} \
+--detach=true \
 --mount type=bind,src=/mnt/data/zookeeper/node${i},dst=/tmp/zookeeper \
 mesoscloud/zookeeper:3.4.8-ubuntu-14.04
 echo "./renter zookeeper_${i}.1 /opt/zookeeper/bin/zkServer.sh status"

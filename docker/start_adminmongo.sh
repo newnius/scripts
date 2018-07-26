@@ -2,6 +2,7 @@
 
 docker service create \
 --name site_adminmongo \
+--detach=true \
 --network swarm-net \
 -e HOST=mongo \
 -e PORT=1234 \
