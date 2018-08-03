@@ -11,5 +11,5 @@ docker service create \
 				--env MYSQL_PASSWORD="zabbix_pwd" \
 				--env MYSQL_ROOT_PASSWORD="root_pwd" \
 				--mount type=bind,source=/etc/localtime,target=/etc/localtime \
+				--mount type=bind,source=/data/mysql/data,target=/var/lib/mysql \
 				mysql:5.7
-				#--mount type=bind,source=/data/mysql/data,target=/var/lib/mysql \
