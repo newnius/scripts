@@ -1,11 +1,12 @@
 #! /bin/bash
 
-# Notice: --endpoint-mode dnsrr is required
-
 docker service create \
-	--name spark-slave \
+	--name neo4j \
+	--hostname neo4j \
 	--network swarm-net \
-	--replicas 5 \
+	--replicas 1 \
 	--detach=true \
+	--publish 7474:7474 \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
-	newnius/spark:2.3.1 slave spark://spark-master:7077
+	--mount type=bind,source=/data/neo4j,target=/data \
+	neo4j

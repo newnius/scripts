@@ -4,6 +4,8 @@
 
 ## Swarm
 
+#### Standalone mode
+
 ```bash
 ./swarm_start_master.sh
 

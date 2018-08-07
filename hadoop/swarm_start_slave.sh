@@ -10,7 +10,7 @@ docker service create \
 	--detach=true \
 	--endpoint-mode dnsrr \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
-	--mount type=bind,source=/data/hadoop/config,target=/mnt/hadoop-config \
+	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave1,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave1,target=/usr/local/hadoop/logs \
 	newnius/hadoop:2.7.4
@@ -23,7 +23,7 @@ docker service create \
 	--detach=true \
 	--endpoint-mode dnsrr \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
-	--mount type=bind,source=/data/hadoop/config,target=/mnt/hadoop-config \
+	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave2,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave2,target=/usr/local/hadoop/logs \
 	newnius/hadoop:2.7.4
@@ -36,7 +36,7 @@ docker service create \
 	--detach=true \
 	--endpoint-mode dnsrr \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
-	--mount type=bind,source=/data/hadoop/config,target=/mnt/hadoop-config \
+	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave3,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave3,target=/usr/local/hadoop/logs \
 	newnius/hadoop:2.7.4

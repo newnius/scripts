@@ -1,10 +1,11 @@
-#! /bin/bash
+#!/bin/bash
 
 docker service create \
-	--name spark-master \
-	--hostname spark-master \
+	--name proxy_lantern \
+	--hostname proxy_lantern \
 	--network swarm-net \
 	--replicas 1 \
 	--detach=true \
+	--publish 3128:3128 \
 	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
-	newnius/spark:2.3.1 master
+	newnius/lantern
