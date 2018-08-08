@@ -21,9 +21,9 @@ In server node, run
 In agent nodes, run
 ```bash
 ./swarm_start_agent.sh
-``
+```
 
-*Notes:*`
+*Notes:*
 *Replace SERVER_HOST as the real server node ip*
 *Set mysql persistent location*
 *Only Zabbix Agent(active) items are supported since swarm will produce different ips which not in the allowed hosts*
