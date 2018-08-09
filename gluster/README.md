@@ -37,5 +37,9 @@ sudo apt install -y glusterfs-client
 ```
 
 ```bash
+test ! -d /mnt/volume1 && mkdir /mnt/volume1
+
 mount -t glusterfs 127.0.0.1:/volume1 /mnt/volume1
+
+cgmod -R 777 /mnt/volume1
 ```
