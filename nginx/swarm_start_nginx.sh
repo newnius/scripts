@@ -12,4 +12,5 @@ docker service create \
 	--mount type=bind,src=/data/nginx/nginx.conf,dst=/etc/nginx/nginx.conf,readonly \
 	--mount type=bind,src=/data/nginx/conf.d,dst=/etc/nginx/conf.d,readonly \
 	--mount type=bind,src=/data/ssl/,dst=/etc/letsencrypt/,readonly \
+	--mount type=bind,src=/data/nginx/logs,dst=/etc/nginx/logs \
 	nginx
