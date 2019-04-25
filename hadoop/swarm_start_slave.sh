@@ -9,7 +9,7 @@ docker service create \
 	--replicas 1 \
 	--detach=true \
 	--endpoint-mode dnsrr \
-	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
+	--mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
 	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave1,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave1,target=/usr/local/hadoop/logs \
@@ -17,12 +17,12 @@ docker service create \
 
 docker service create \
 	--name hadoop-slave2 \
-	--network swarm-net \
 	--hostname hadoop-slave2 \
+	--network swarm-net \
 	--replicas 1 \
 	--detach=true \
 	--endpoint-mode dnsrr \
-	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
+	--mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
 	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave2,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave2,target=/usr/local/hadoop/logs \
@@ -35,7 +35,7 @@ docker service create \
 	--replicas 1 \
 	--detach=true \
 	--endpoint-mode dnsrr \
-	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
+	--mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
 	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/slave3,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/slave3,target=/usr/local/hadoop/logs \

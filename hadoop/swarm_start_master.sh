@@ -9,7 +9,7 @@ docker service create \
 	--replicas 1 \
 	--detach=true \
 	--endpoint-mode dnsrr \
-	--mount type=bind,source=/etc/localtime,target=/etc/localtime \
+	--mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
 	--mount type=bind,source=/data/hadoop/config,target=/config/hadoop \
 	--mount type=bind,source=/data/hadoop/hdfs/master,target=/tmp/hadoop-root \
 	--mount type=bind,source=/data/hadoop/logs/master,target=/usr/local/hadoop/logs \
